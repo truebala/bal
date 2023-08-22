@@ -1,11 +1,14 @@
 provider "aws" {
-    region = "us-west-1"  
+    region = "us-east-1"
 }
-
-resource "aws_instance" "foo" {
-  ami           = "ami-0f8e81a3da6e2510a" # us-west-1
-  instance_type = "t2.micro"
-  tags = {
-      Name = "TF-Instance"
+resource "aws_s3_bucket" "rajubala1234" {
+  bucket = "testing-s3-with-terraform2000"
+  acl = "private"
+  versioning {
+       enabled = "true"
   }
-}
+  tags = {
+    Name = "bucket2000"
+    Environment = "Test"
+  }
+~                                      
